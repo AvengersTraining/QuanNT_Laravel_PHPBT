@@ -63,6 +63,8 @@ class Post extends Model
      */
     public function reactedUsers()
     {
-        return $this->belongsToMany(User::class, 'reactions')->withPivot('type');
+        return $this->belongsToMany(User::class, 'reactions')
+            ->withPivot('type')
+            ->withTimestamps();
     }
 }

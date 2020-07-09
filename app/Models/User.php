@@ -69,6 +69,8 @@ class User extends Authenticatable
      */
     public function reactedPosts()
     {
-        return $this->belongsToMany(Post::class, 'reactions')->withPivot('type');
+        return $this->belongsToMany(Post::class, 'reactions')
+            ->withPivot('type')
+            ->withTimestamps();
     }
 }
