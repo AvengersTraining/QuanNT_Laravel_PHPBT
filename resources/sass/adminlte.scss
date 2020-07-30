@@ -1,0 +1,17 @@
+//Font Awesome
+@import '~admin-lte/plugins/fontawesome-free/css/all.min.css';
+
+//icheck bootstrap
+@import '~icheck-bootstrap/icheck-bootstrap.min.css';
+
+//Theme style
+@import '~admin-lte/dist/css/adminlte.min.css';
+
+.paginate_button {
+    padding: 0 !important;
+    border-radius: 0px !important;
+}
+
+.paginate_button:hover {
+    border: 1px solid aliceblue !important;
+}

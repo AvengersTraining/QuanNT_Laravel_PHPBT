@@ -18,3 +18,25 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Admin
+Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
+    Route::middleware('admin.auth')->group(function () {
+        Route::get('/', 'DashboardController@index')->name('dashboard');
+
+        Route::prefix('users')->name('users.')->group(function () {
+            Route::get('get_users_datatable', 'UserController@getDatatableIndex')
+                ->name('datatable.index');
+        });
+        Route::resource('users', 'UserController')->except('show');
+    });
+
+    Route::namespace('Auth')->group(function () {
+        Route::post('logout', 'LoginController@logout')->name('logout');
+
+        Route::middleware('guest:admin')->group(function () {
+            Route::get('login', 'LoginController@showLoginForm')->name('login');
+            Route::post('login', 'LoginController@login')->name('login');
+        });
+    });
+});
