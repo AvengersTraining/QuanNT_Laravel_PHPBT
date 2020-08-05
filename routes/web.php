@@ -23,7 +23,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::middleware('admin.auth')->group(function () {
         Route::get('/', 'DashboardController@index')->name('dashboard');
-        Route::resource('users', 'UserController');
+
+        Route::prefix('users')->name('users.')->group(function () {
+            Route::get('get_users_datatable', 'UserController@getDatatableIndex')
+                ->name('datatable.index');
+        });
+        Route::resource('users', 'UserController')->except([
+            'create',
+            'store',
+            'show'
+        ]);
     });
 
     Route::namespace('Auth')->group(function () {
