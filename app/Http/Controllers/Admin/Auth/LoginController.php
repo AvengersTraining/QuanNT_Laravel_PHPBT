@@ -43,7 +43,7 @@ class LoginController extends Controller
         $this->clearLoginAttempts($request);
 
         return $this->authenticated($request, $this->guard()->user())
-            ?: redirect()->route('admin.');
+            ?: redirect()->route('admin.dashboard');
     }
 
     /**

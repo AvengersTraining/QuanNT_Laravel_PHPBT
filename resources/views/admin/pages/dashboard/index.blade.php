@@ -9,11 +9,14 @@
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
-                </li>
+            <ul class="navbar-nav ml-auto">
+                <a href="#"
+                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fa fa-fw fa-power-off"></i> Logout
+                </a>
+                <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -47,7 +50,7 @@
                                     Dashboard
                                 </p>
                             </a>
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('admin.users.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     List User
@@ -68,12 +71,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Dashboard</h1>
+                            <h1 class="m-0 text-dark">@yield('title_content', 'Dashboard')</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
+                                <li class="breadcrumb-item active"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                @yield('link_active_content')
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -83,7 +86,7 @@
 
             <!-- Main content -->
             <div class="content">
-
+                @yield('show_content')
             </div>
             <!-- /.content -->
         </div>
