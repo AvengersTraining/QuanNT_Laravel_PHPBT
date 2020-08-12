@@ -50,10 +50,20 @@
                                     Dashboard
                                 </p>
                             </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('admin.users.index') }}" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon far fa-user"></i>
                                 <p>
                                     List User
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.posts.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    List Post
                                 </p>
                             </a>
                         </li>

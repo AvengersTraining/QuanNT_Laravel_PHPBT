@@ -1,7 +1,12 @@
 /node_modules
-/public/*
-/storage/*
+/public/css/*
+/public/js/*
+/public/fonts/*
+/public/mix-manifest.json
+/public/images/*
+/storage
 /vendor
+/.idea
 .env
 .env.backup
 .phpunit.result.cache
@@ -9,5 +14,4 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/.idea/*
 package-lock.json
