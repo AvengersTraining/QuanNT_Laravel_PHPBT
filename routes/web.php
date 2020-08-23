@@ -40,7 +40,9 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
             Route::get('get_posts_datatables', 'PostController@getDatatableIndex')
                 ->name('datatable.index');
         });
-        Route::resource('posts', 'PostController');
+        Route::resource('posts', 'PostController')->parameters([
+            'post' => 'slug',
+        ]);
     });
 
     Route::namespace('Auth')->group(function () {

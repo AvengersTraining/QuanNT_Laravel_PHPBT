@@ -9,6 +9,8 @@ class Post extends Model
 {
     use SoftDeletes;
 
+    const PULIC_POST = 1;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,7 +23,7 @@ class Post extends Model
         'title',
         'content',
         'slug',
-        'status'
+        'status',
     ];
 
     protected $dates = ['deleted_at'];

@@ -9,7 +9,7 @@
 
 @section('show_content')
     <div class="btn-generate-group mb-3">
-        <a class="btn btn-success" id="open_generate_modal_button" href="#">
+        <a class="btn btn-success" id="open_generate_modal_button" href="{{ route('admin.posts.create') }}">
             <i class="fa fa-plus" aria-hidden="true"></i> Create
         </a>
     </div>
