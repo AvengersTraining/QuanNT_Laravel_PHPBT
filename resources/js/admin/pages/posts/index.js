@@ -27,3 +27,15 @@ let postDatatable = postTableEl
             }
         }
     });
+
+// Open delte user confirm event binding
+postTableEl.on('click', '.btn-delete-post', function () {
+    let selectedRow = $(this).closest('tr'),
+        selectedTitle = selectedRow.data('title'),
+        isConfirm = confirm(`You definitely want to delete your post: ${selectedTitle}?`);
+
+    if (isConfirm) {
+        let formDelete = selectedRow.find('#confirm-delete-post');
+        formDelete.submit();
+    }
+});

@@ -32,7 +32,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
         Route::resource('users', 'UserController')->except([
             'create',
             'store',
-            'show'
+            'show',
         ]);
 
         //CRUD Posts
