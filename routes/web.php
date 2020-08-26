@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
+
+Route::name('client.')->namespace('Client')->group(function () {
+    Route::get('/', 'PostController@index')->name('index');
+    Route::get('/posts/{slug}', 'PostController@show')->name('show');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 

@@ -7,7 +7,7 @@ use App\Models\Category;
 use Faker\Generator as Faker;
 
 $factory->define(Post::class, function (Faker $faker) {
-    $title = $faker->text(20);
+    $title = $faker->unique()->text(20);
     $slugTitle = str_slug($title, '-');
 
     return [
