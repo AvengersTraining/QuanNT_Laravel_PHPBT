@@ -13,7 +13,7 @@
                             @endif
                         </div><br>
                         <div class="summary">
-                            {{ $post->content }}
+                            {!! substr($post->content, strpos($post->content, '<p'), strpos($post->content, '</p>') + 4) !!}
                         </div><br>
                         <div class="row small text-grey">
                             <div class="col-md-7 col-xs-7 flex">

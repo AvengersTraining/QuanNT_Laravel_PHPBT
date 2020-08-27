@@ -35,7 +35,7 @@
                                 <b class="d-block">{{ $post->title }}</b>
                             </div>
                             <div class="text-md">Content:
-                                <b class="d-block">{{ $post->content }}</b>
+                                {!! $post->content !!}
                             </div>
                         </div>
                         <!-- /.card-body -->
