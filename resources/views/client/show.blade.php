@@ -33,7 +33,7 @@
         <br><br>
         <div class="row ql-container">
             <div class="col-md-12">
-                {{ $post->content }}
+                {!! $post->content !!}
             </div>
         </div>
         <hr>

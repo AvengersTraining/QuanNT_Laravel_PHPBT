@@ -6,8 +6,8 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Edit Post</h3>
@@ -53,8 +53,9 @@
 
                                 <div class="form-group">
                                     <label for="name">Content</label>
-                                    <input type="text" class="form-control"
-                                           name="content" id="content" value="{{ $post->content }}">
+                                    <textarea class="form-control" name="content" id="content">
+                                        {!! $post->content !!}
+                                    </textarea>
                                     @if ($errors->has('content'))
                                         <span class="invalid-feedback display-block" role="alert">
                                             <strong>{{ $errors->first('content') }}</strong>
@@ -71,7 +72,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-md-3"></div>
+                <div class="col-md-2"></div>
             </div>
         </div>
     </section>
